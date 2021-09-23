@@ -1,4 +1,4 @@
-import { ISort } from "../../../models/Sort";
+import { ISort } from "models/Sort";
 import { SortAction, SortActionEnum, SortState } from "./types";
 
 const initialState: SortState = {

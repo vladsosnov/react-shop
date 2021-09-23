@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./css/Hero.module.css";
+import styles from "css/components/pages/Hero.module.css";
 
-const Hero = ({ moveToSliderHandler }) => {
+const Hero: any = ({ moveToSliderHandler }: any): any => {
   return (
     <div className={styles.hero}>
       <div className={styles["inner-hero"]}>

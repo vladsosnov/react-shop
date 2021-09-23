@@ -1,4 +1,4 @@
-import { ICart } from "./../../../models/Cart";
+import { ICart } from "models/Cart";
 
 import { CartAction, CartActionEnum, CartState } from "./types";
 

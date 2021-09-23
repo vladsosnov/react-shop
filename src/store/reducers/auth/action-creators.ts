@@ -1,5 +1,5 @@
-import { AppDispatch } from "./../../index";
-import { IUser } from "./../../../models/User";
+import { AppDispatch } from "store/index";
+import { IUser } from "models/User";
 import {
   AuthActionEnum,
   SetUserAction,

@@ -1,12 +1,12 @@
 import React, { useState, useEffect, FC } from "react";
-import { formatCurrency } from "../utils/currency";
-import styles from "./css/Cart.module.css";
+import { formatCurrency } from "utils/currency";
+import styles from "css/pages/Cart.module.css";
 
-import { Product } from "../components/pages/cart/Product";
-import { OrderForm } from "../components/pages/cart/OrderForm";
-import { IProduct } from "../models/Product";
-import { useActions } from "../hooks/useActions";
-import { useTypedSelector } from "../hooks/useTypedSelector";
+import { Product } from "components/pages/cart/Product";
+import { OrderForm } from "components/pages/cart/OrderForm";
+import { IProduct } from "models/Product";
+import { useActions } from "hooks/useActions";
+import { useTypedSelector } from "hooks/useTypedSelector";
 
 const Cart: FC = () => {
   const { fetchCartItems, removeFromCart, createOrder } = useActions();

@@ -1,4 +1,4 @@
-import { IProduct } from "./../../../models/Product";
+import { IProduct } from "models/Product";
 
 export interface ProductsState {
   list: IProduct[];

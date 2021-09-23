@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import styles from "./css/Product.module.css";
+import styles from "css/components/pages/Product.module.css";
 
-import { formatCurrency } from "../../../utils/currency";
-import { IProduct } from "../../../models/Product";
+import { formatCurrency } from "utils/currency";
+import { IProduct } from "models/Product";
 
 type Props = {
   product: IProduct;

@@ -1,4 +1,4 @@
-import { ISort } from "./../../../models/Sort";
+import { ISort } from "models/Sort";
 
 export interface SortState {
   type: ISort;

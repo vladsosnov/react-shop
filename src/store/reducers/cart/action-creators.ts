@@ -1,4 +1,4 @@
-import { ICart } from "./../../../models/Cart";
+import { ICart } from "models/Cart";
 import {
   CartActionEnum,
   FetchCartItemsAction,

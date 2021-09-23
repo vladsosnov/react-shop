@@ -1,4 +1,4 @@
-import { ISort } from "./../../../models/Sort";
+import { ISort } from "models/Sort";
 import { SortActionEnum, SetSortAction } from "./types";
 
 export const SortActionCreators = {

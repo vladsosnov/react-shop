@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { Layout, Row, Menu } from "antd";
 import { useHistory } from "react-router";
-import { useTypedSelector } from "../hooks/useTypedSelector";
-import { RouteNames } from "../routes";
-import { useActions } from "../hooks/useActions";
+import { useTypedSelector } from "hooks/useTypedSelector";
+import { RouteNames } from "routes";
+import { useActions } from "hooks/useActions";
 
 const Navbar: FC = () => {
   const router = useHistory();

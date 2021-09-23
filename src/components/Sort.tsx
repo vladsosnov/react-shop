@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./css/Sort.module.css";
+import styles from "css/components/Sort.module.css";
 
 const Sort: any = ({ setSortType, sort }: any) => {
   return (

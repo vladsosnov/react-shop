@@ -1,4 +1,4 @@
-import { ICart } from "./../../../models/Cart";
+import { ICart } from "models/Cart";
 
 export interface CartState {
   order: any;

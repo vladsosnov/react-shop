@@ -1,4 +1,4 @@
-import { IFilter } from "../../../models/Filter";
+import { IFilter } from "models/Filter";
 import { FilterAction, FilterActionEnum, FilterState } from "./types";
 
 const initialState: FilterState = {

@@ -1,8 +1,8 @@
 import React from "react";
 
-import styles from "./css/OrderForm.module.css";
+import styles from "css/components/pages/OrderForm.module.css";
 
-const OrderForm = ({ createOrder, handleInput, order }) => {
+const OrderForm: any = ({ createOrder, handleInput, order }: any): any => {
   return (
     <form className={styles.orderForm} onSubmit={(e) => createOrder(order, e)}>
       <ul className={styles.orderFormContainer}>

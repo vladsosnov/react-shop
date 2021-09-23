@@ -1,4 +1,4 @@
-import { IFilter } from "./../../../models/Filter";
+import { IFilter } from "models/Filter";
 
 export interface FilterState {
   size: IFilter;

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./css/Coupons.module.css";
+import styles from "css/components/pages/Coupons.module.css";
 
 const Coupons = () => {
   return <div className={styles.coupons}>Coupons</div>;

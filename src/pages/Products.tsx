@@ -1,15 +1,15 @@
 import React, { useState, useEffect, FC } from "react";
-import { formatCurrency } from "../utils/currency";
+import { formatCurrency } from "utils/currency";
 import Modal from "react-modal";
 
-import { Filter } from "../components/Filter";
-import { Sort } from "../components/Sort";
+import { Filter } from "components/Filter";
+import { Sort } from "components/Sort";
 
-import styles from "./css/Products.module.css";
-import { useActions } from "../hooks/useActions";
-import { useTypedSelector } from "../hooks/useTypedSelector";
-import { Product } from "../components/pages/products/Product";
-import { IProduct } from "../models/Product";
+import styles from "css/pages/Products.module.css";
+import { useActions } from "hooks/useActions";
+import { useTypedSelector } from "hooks/useTypedSelector";
+import { Product } from "components/pages/products/Product";
+import { IProduct } from "models/Product";
 
 const Products: FC = () => {
   const {

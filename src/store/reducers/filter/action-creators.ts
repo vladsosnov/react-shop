@@ -1,4 +1,4 @@
-import { IFilter } from "./../../../models/Filter";
+import { IFilter } from "models/Filter";
 import { FilterActionEnum, SetFilterAction } from "./types";
 
 export const FilterActionCreators = {

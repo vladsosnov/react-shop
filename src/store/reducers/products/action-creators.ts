@@ -1,6 +1,6 @@
-import { IProduct } from "./../../../models/Product";
+import { IProduct } from "models/Product";
 import { ProductsActionEnum } from "./types";
-import { AppDispatch } from "./../../index";
+import { AppDispatch } from "store/index";
 import axios from "axios";
 
 export const ProductsActionCreators = {

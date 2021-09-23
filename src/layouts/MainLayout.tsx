@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 
-import { Header } from "../components/UI/Header";
-import { Footer } from "../components/UI/Footer";
+import { Header } from "components/UI/Header";
+import { Footer } from "components/UI/Footer";
 
-import styles from "./css/MainLayout.module.css";
+import styles from "css/layouts/MainLayout.module.css";
 
 const MainLayout: FC = (props) => {
   return (
