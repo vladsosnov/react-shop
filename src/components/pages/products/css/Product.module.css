@@ -1,0 +1,28 @@
+.product {
+  padding: 12px;
+}
+
+.productImage {
+  max-width: 260px;
+}
+
+.productModalLink {
+  text-decoration: none;
+}
+
+.productTitle {
+  margin: 8px 0;
+  text-decoration: none;
+  color: #000;
+}
+
+.productFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productPrice {
+  margin: 8px 0;
+  font-size: 21px;
+}

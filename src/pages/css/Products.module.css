@@ -1,0 +1,32 @@
+.productsList {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.productDetails {}
+
+.filterResult {
+  background: red;
+}
+
+.productsEmptyState {
+  font-size: 21px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productsNavbar {
+  margin-top: 12px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0px;
+  box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+}

@@ -1,0 +1,12 @@
+.footer {
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer .footer__git-link {
+  margin-left: 4px;
+  color: #000;
+}
