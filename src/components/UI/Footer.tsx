@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 import styles from "css/UI/Footer.module.css";
 
-const Footer = () => {
+const Footer: FC = () => {
   return (
     <footer className={styles.footer}>
       Created by{" "}

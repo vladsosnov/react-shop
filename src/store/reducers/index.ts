@@ -4,7 +4,7 @@ import products from "./products";
 import filter from "./filter";
 import sort from "./sort";
 
-export default {
+export const reducers = {
   auth,
   cart,
   products,

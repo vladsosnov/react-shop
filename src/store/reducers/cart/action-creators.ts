@@ -1,4 +1,5 @@
-import { ICart } from "models/Cart";
+import { IOrder } from "./../../../models/Cart";
+import { IProduct } from "models/Product";
 import {
   CartActionEnum,
   FetchCartItemsAction,
@@ -8,20 +9,20 @@ import {
 } from "./types";
 
 export const CartActionCreators = {
-  fetchCartItems: (cartItems: any): FetchCartItemsAction => ({
+  fetchCartItems: (cartItems: IProduct[]): FetchCartItemsAction => ({
     type: CartActionEnum.FETCH_CART_ITEMS,
     payload: cartItems,
   }),
-  addToCart: (cartItems: any): AddToCartAction => ({
+  addToCart: (product: IProduct): AddToCartAction => ({
     type: CartActionEnum.ADD_TO_CART,
-    payload: cartItems,
+    payload: product,
   }),
-  removeFromCart: (list: []): RemoveFromCartAction => ({
+  removeFromCart: (product: IProduct): RemoveFromCartAction => ({
     type: CartActionEnum.REMOVE_FROM_CART,
-    payload: list,
+    payload: product,
   }),
-  createOrder: (list: []): CreateOrderAction => ({
+  createOrder: (order: IOrder): CreateOrderAction => ({
     type: CartActionEnum.CREATE_ORDER,
-    payload: list,
+    payload: order,
   }),
 };

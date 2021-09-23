@@ -1,7 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import styles from "css/components/pages/Hero.module.css";
 
-const Hero: any = ({ moveToSliderHandler }: any): any => {
+type Props = {
+  moveToSliderHandler: () => void;
+};
+
+const Hero: FC<Props> = ({ moveToSliderHandler }: Props) => {
   return (
     <div className={styles.hero}>
       <div className={styles["inner-hero"]}>

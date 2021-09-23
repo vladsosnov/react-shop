@@ -1,24 +1,29 @@
+import { IFilter } from "models/Filter";
+import { ISort } from "models/Sort";
 import { IProduct } from "models/Product";
-import { ProductsActionEnum } from "./types";
+import { FetchProductsListAction, ProductsActionEnum } from "./types";
 import { AppDispatch } from "store/index";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 
 export const ProductsActionCreators = {
-  fetchProductsList: (list: IProduct[]): any => ({
+  fetchProductsList: (list: IProduct[]): FetchProductsListAction => ({
     type: ProductsActionEnum.FETCH_PRODUCTS_LIST,
     payload: list,
   }),
   fetchProducts: () => async (dispatch: AppDispatch) => {
     try {
-      const list: any = await axios.get<IProduct[]>("./products.json");
+      const list: AxiosResponse = await axios.get<IProduct[]>(
+        "./products.json"
+      );
 
       dispatch(ProductsActionCreators.fetchProductsList(list.data.products));
     } catch (e) {
       console.log("error: ", e);
     }
   },
-  filterProducts: (sort: string) => async (dispatch: AppDispatch) => {
-    const list: any = await axios.get<IProduct[]>("./products.json");
+  filterProducts: (sort: IFilter) => async (dispatch: AppDispatch) => {
+    const list: AxiosResponse = await axios.get<IProduct[]>("./products.json");
+    console.log("list", list);
     const products = list.data.products;
 
     const filteredProducts = !sort
@@ -29,8 +34,8 @@ export const ProductsActionCreators = {
 
     dispatch(ProductsActionCreators.fetchProductsList(filteredProducts));
   },
-  sortProducts: (filter: string) => async (dispatch: AppDispatch) => {
-    const list: any = await axios.get<IProduct[]>("./products.json");
+  sortProducts: (filter: ISort) => async (dispatch: AppDispatch) => {
+    const list: AxiosResponse = await axios.get<IProduct[]>("./products.json");
     const products = list.data.products;
 
     const sortedProducts = [...products].sort((a, b) => {

@@ -2,7 +2,7 @@ import { ISort } from "models/Sort";
 import { SortAction, SortActionEnum, SortState } from "./types";
 
 const initialState: SortState = {
-  type: "default",
+  type: "default" as ISort,
 };
 
 export default function sortReducer(

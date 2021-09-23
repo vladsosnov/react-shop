@@ -1,10 +1,10 @@
-import { ICart } from "models/Cart";
-
+import { IOrder } from "./../../../models/Cart";
+import { IProduct } from "models/Product";
 import { CartAction, CartActionEnum, CartState } from "./types";
 
 const initialState: CartState = {
-  order: {},
-  cartItems: [],
+  order: {} as IOrder,
+  cartItems: [] as IProduct[],
 };
 
 export default function cartReducer(
@@ -25,7 +25,9 @@ export default function cartReducer(
 
     case CartActionEnum.REMOVE_FROM_CART:
       const cartAfterRemove = [
-        ...state.cartItems.filter((x: any) => x._id !== action.payload._id),
+        ...state.cartItems.filter(
+          (x: IProduct) => x._id !== action.payload._id
+        ),
       ];
       localStorage.setItem("cartItems", JSON.stringify(cartAfterRemove));
 
@@ -37,9 +39,9 @@ export default function cartReducer(
     case CartActionEnum.ADD_TO_CART:
       let alreadyInCart = false;
 
-      state.cartItems.forEach((item: any) => {
+      state.cartItems.forEach((item: IProduct) => {
         if (item._id === action.payload._id) {
-          item.count++;
+          item.count!++;
           alreadyInCart = true;
         }
       });

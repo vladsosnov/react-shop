@@ -33,15 +33,15 @@ export const AuthActionCreators = {
 
         setTimeout(async () => {
           const response = await axios.get<IUser[]>("./users.json");
-          const mockUser = response.data.find(
+          const currentUser = response.data.find(
             (user) => user.username === username && user.password === password
           );
 
-          if (mockUser) {
+          if (currentUser) {
             localStorage.setItem("auth", "true");
-            localStorage.setItem("username", mockUser.username);
+            localStorage.setItem("username", currentUser.username);
             dispatch(AuthActionCreators.setIsAuth(true));
-            dispatch(AuthActionCreators.setUser(mockUser));
+            dispatch(AuthActionCreators.setUser(currentUser));
           } else {
             dispatch(AuthActionCreators.setError("Error in user name or pass"));
           }

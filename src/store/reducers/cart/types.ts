@@ -1,8 +1,9 @@
-import { ICart } from "models/Cart";
+import { IOrder } from "./../../../models/Cart";
+import { IProduct } from "models/Product";
 
 export interface CartState {
-  order: any;
-  cartItems: any;
+  order: IOrder;
+  cartItems: IProduct[];
 }
 
 export enum CartActionEnum {
@@ -14,22 +15,22 @@ export enum CartActionEnum {
 
 export interface FetchCartItemsAction {
   type: CartActionEnum.FETCH_CART_ITEMS;
-  payload: any;
+  payload: IProduct[];
 }
 
 export interface CreateOrderAction {
   type: CartActionEnum.CREATE_ORDER;
-  payload: any;
+  payload: IOrder;
 }
 
 export interface AddToCartAction {
   type: CartActionEnum.ADD_TO_CART;
-  payload: any;
+  payload: IProduct;
 }
 
 export interface RemoveFromCartAction {
   type: CartActionEnum.REMOVE_FROM_CART;
-  payload: any;
+  payload: IProduct;
 }
 
 export type CartAction =

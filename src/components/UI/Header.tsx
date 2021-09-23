@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import styles from "css/UI/Header.module.css";
 
-const Header = () => {
+const Header: FC = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.header__nav}>

@@ -7,6 +7,7 @@ import { OrderForm } from "components/pages/cart/OrderForm";
 import { IProduct } from "models/Product";
 import { useActions } from "hooks/useActions";
 import { useTypedSelector } from "hooks/useTypedSelector";
+import { IOrder } from "models/Cart";
 
 const Cart: FC = () => {
   const { fetchCartItems, removeFromCart, createOrder } = useActions();
@@ -20,7 +21,7 @@ const Cart: FC = () => {
   const [order, setOrder] = useState({});
   const [showCheckout, setShowCheckout] = useState(false);
 
-  const handleInput = (e: React.SyntheticEvent): void => {
+  const handleInput = (e: React.SyntheticEvent) => {
     const target = e.target as HTMLInputElement;
     setOrder({ ...order, [target.name]: target.value });
   };
@@ -54,7 +55,10 @@ const Cart: FC = () => {
               <div>
                 Total:{" "}
                 {formatCurrency(
-                  cartItems.reduce((a: any, c: any) => a + c.price * c.count, 0)
+                  cartItems.reduce(
+                    (a: number, c: IProduct) => a + c.price * c.count!,
+                    0
+                  )
                 )}
               </div>
               <button
@@ -70,7 +74,7 @@ const Cart: FC = () => {
               <OrderForm
                 createOrder={createOrder}
                 handleInput={handleInput}
-                order={order}
+                order={order as IOrder}
               />
             </div>
           )}

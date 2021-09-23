@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 import styles from "css/components/pages/Coupons.module.css";
 
-const Coupons = () => {
+const Coupons: FC = () => {
   return <div className={styles.coupons}>Coupons</div>;
 };
 

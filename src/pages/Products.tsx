@@ -1,15 +1,16 @@
 import React, { useState, useEffect, FC } from "react";
 import { formatCurrency } from "utils/currency";
 import Modal from "react-modal";
+import styles from "css/pages/Products.module.css";
 
 import { Filter } from "components/Filter";
 import { Sort } from "components/Sort";
-
-import styles from "css/pages/Products.module.css";
 import { useActions } from "hooks/useActions";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import { Product } from "components/pages/products/Product";
 import { IProduct } from "models/Product";
+import { ISort } from "models/Sort";
+import { IFilter } from "models/Filter";
 
 const Products: FC = () => {
   const {
@@ -31,21 +32,17 @@ const Products: FC = () => {
 
   const [product, setProduct] = useState<IProduct | null>();
 
-  const openModal = (product: any) => setProduct(product);
+  const openModal = (product: IProduct) => setProduct(product);
   const closeModal = () => setProduct(null);
 
-  const setSortProducts = (e: React.SyntheticEvent) => {
-    const target = e.target as any;
-
-    setSortType(target.value);
-    sortProducts(target.value);
+  const setSortProducts = (sortType: ISort) => {
+    setSortType(sortType);
+    sortProducts(sortType);
   };
 
-  const setFilterProducts = (e: React.SyntheticEvent) => {
-    const target = e.target as any;
-
-    setFilterSize(target.value);
-    filterProducts(target.value);
+  const setFilterProducts = (filterType: IFilter) => {
+    setFilterSize(filterType);
+    filterProducts(filterType);
   };
 
   const addProductToCart = (product: IProduct) => {
@@ -61,10 +58,10 @@ const Products: FC = () => {
       </div>
 
       {!list.length ? (
-        <h2 className={styles.productsEmptyState}>Not any products...</h2>
+        <h2 className={styles.productsEmptyState}>Not products yet...</h2>
       ) : (
         <ul className={styles.productsList}>
-          {list.map((product): any => (
+          {list.map((product: IProduct) => (
             <Product
               key={product._id}
               product={product}

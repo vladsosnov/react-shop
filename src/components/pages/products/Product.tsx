@@ -10,7 +10,11 @@ type Props = {
   addProductToCart: (product: IProduct) => void;
 };
 
-const Product: any = ({ product, openModal, addProductToCart }: Props) => {
+const Product: FC<Props> = ({
+  product,
+  openModal,
+  addProductToCart,
+}: Props) => {
   return (
     <li className={styles.product}>
       <a

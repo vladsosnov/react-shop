@@ -1,8 +1,15 @@
-import React from "react";
+import React, { FC } from "react";
 
 import styles from "css/components/pages/OrderForm.module.css";
+import { IOrder } from "models/Cart";
 
-const OrderForm: any = ({ createOrder, handleInput, order }: any): any => {
+type Props = {
+  order: IOrder;
+  createOrder: (order: IOrder, e: React.FormEvent<HTMLFormElement>) => void;
+  handleInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+const OrderForm: FC<Props> = ({ createOrder, handleInput, order }: Props) => {
   return (
     <form className={styles.orderForm} onSubmit={(e) => createOrder(order, e)}>
       <ul className={styles.orderFormContainer}>

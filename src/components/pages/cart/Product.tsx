@@ -8,7 +8,7 @@ type Props = {
   removeFromCart: (product: IProduct) => void;
 };
 
-const Product: any = ({ product, removeFromCart }: Props) => {
+const Product: FC<Props> = ({ product, removeFromCart }: Props) => {
   return (
     <li className={styles.product}>
       <img
