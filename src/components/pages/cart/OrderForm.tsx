@@ -11,7 +11,13 @@ type Props = {
 
 const OrderForm: FC<Props> = ({ createOrder, handleInput, order }: Props) => {
   return (
-    <form className={styles.orderForm} onSubmit={(e) => createOrder(order, e)}>
+    <form
+      className={styles.orderForm}
+      onSubmit={(e) => {
+        e.preventDefault();
+        createOrder(order, e);
+      }}
+    >
       <ul className={styles.orderFormContainer}>
         <li className={styles.orderFormItem}>
           <label className={styles.orderFormItemLabel}>Email</label>

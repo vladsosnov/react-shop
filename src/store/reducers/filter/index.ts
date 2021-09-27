@@ -1,7 +1,8 @@
 import { FilterAction, FilterActionEnum, FilterState } from "./types";
+import { IFilter } from "models/Filter";
 
 const initialState: FilterState = {
-  size: "ALL",
+  size: IFilter.All,
 };
 
 export default function filterReducer(
