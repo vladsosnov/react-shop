@@ -1,6 +1,7 @@
 import React, { useState, useEffect, FC } from "react";
 import { formatCurrency } from "utils/currency";
 import styles from "css/pages/Cart.module.css";
+import { Button } from "antd";
 
 import { Product } from "components/pages/cart/Product";
 import { OrderForm } from "components/pages/cart/OrderForm";
@@ -27,7 +28,7 @@ const Cart: FC = () => {
   };
 
   return (
-    <div>
+    <>
       {cartItems.length === 0 ? (
         <div className={styles.cart && styles.cartHeader}>Cart is empty</div>
       ) : (
@@ -61,12 +62,9 @@ const Cart: FC = () => {
                   )
                 )}
               </div>
-              <button
-                onClick={() => setShowCheckout(true)}
-                className="button primary"
-              >
+              <Button onClick={() => setShowCheckout(true)} type="primary">
                 Proceed
-              </button>
+              </Button>
             </div>
           </div>
           {showCheckout && (
@@ -80,7 +78,7 @@ const Cart: FC = () => {
           )}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

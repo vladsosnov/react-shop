@@ -7,7 +7,7 @@ type Props = {
   setSortType: (sort: ISort) => void;
 };
 
-const Sort: FC<Props> = ({ setSortType, sort }: Props) => {
+const Sort: FC<Props> = ({ setSortType, sort }) => {
   return (
     <div className={styles.sortStyle}>
       Order&nbsp;

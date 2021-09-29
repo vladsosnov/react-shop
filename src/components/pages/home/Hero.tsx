@@ -5,7 +5,7 @@ type Props = {
   moveToSliderHandler: () => void;
 };
 
-const Hero: FC<Props> = ({ moveToSliderHandler }: Props) => {
+const Hero: FC<Props> = ({ moveToSliderHandler }) => {
   return (
     <div className={styles.hero}>
       <div className={styles["inner-hero"]}>

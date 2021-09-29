@@ -1,43 +1,41 @@
 import React, { FC } from "react";
 import styles from "css/components/pages/Product.module.css";
+import { Card } from "antd";
 
 import { formatCurrency } from "utils/currency";
 import { IProduct } from "models/Product";
+import { Button } from "antd";
 
 type Props = {
   product: IProduct;
-  openModal: (product: IProduct) => void;
   addProductToCart: (product: IProduct) => void;
 };
 
-const Product: FC<Props> = ({
-  product,
-  openModal,
-  addProductToCart,
-}: Props) => {
+const { Meta } = Card;
+
+const Product: FC<Props> = ({ product, addProductToCart }) => {
   return (
     <li className={styles.product}>
-      <a
-        href={"#" + product._id}
-        className={styles.productModalLink}
-        onClick={() => openModal(product)}
+      <Card
+        hoverable
+        style={{ width: 240 }}
+        cover={<img alt={product.title} src={product.image} />}
       >
-        <img
-          src={product.image}
-          alt={product.title}
-          className={styles.productImage}
+        <Meta
+          title={product.title}
+          description={formatCurrency(product.price)}
         />
-        <p className={styles.productTitle}>{product.title}</p>
-      </a>
-      <div className={styles.productFooter}>
-        <p className={styles.productPrice}>{formatCurrency(product.price)}</p>
-        <button
+
+        <br />
+
+        <Button
+          style={{ background: "#389e0d", borderColor: "#389e0d" }}
+          type="primary"
           onClick={() => addProductToCart(product)}
-          className="button primary"
         >
           Add To Cart
-        </button>
-      </div>
+        </Button>
+      </Card>
     </li>
   );
 };

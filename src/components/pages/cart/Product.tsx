@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styles from "css/components/pages/Product.module.css";
+import { Button } from "antd";
 
 import { formatCurrency } from "utils/currency";
 import { IProduct } from "models/Product";
@@ -8,7 +9,7 @@ type Props = {
   removeFromCart: (product: IProduct) => void;
 };
 
-const Product: FC<Props> = ({ product, removeFromCart }: Props) => {
+const Product: FC<Props> = ({ product, removeFromCart }) => {
   return (
     <li className={styles.product}>
       <img
@@ -21,12 +22,9 @@ const Product: FC<Props> = ({ product, removeFromCart }: Props) => {
         <div className={styles.productFooter}>
           {/* TODO: price => to component */}
           <p className={styles.productPrice}>{formatCurrency(product.price)}</p>
-          <button
-            onClick={() => removeFromCart(product)}
-            className="button primary"
-          >
+          <Button danger onClick={() => removeFromCart(product)} type="primary">
             Remove From Cart
-          </button>
+          </Button>
         </div>
       </div>
     </li>

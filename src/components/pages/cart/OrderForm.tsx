@@ -1,61 +1,50 @@
 import React, { FC } from "react";
 
 import styles from "css/components/pages/OrderForm.module.css";
+import { Button, Form, Input } from "antd";
+import { rules } from "utils/rules";
 import { IOrder } from "models/Cart";
 
 type Props = {
   order: IOrder;
-  createOrder: (order: IOrder, e: React.FormEvent<HTMLFormElement>) => void;
+  createOrder: (order: IOrder) => void;
   handleInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const OrderForm: FC<Props> = ({ createOrder, handleInput, order }: Props) => {
+const OrderForm: FC<Props> = ({ createOrder, handleInput, order }) => {
   return (
-    <form
-      className={styles.orderForm}
-      onSubmit={(e) => {
-        e.preventDefault();
-        createOrder(order, e);
-      }}
-    >
+    <Form className={styles.orderForm} onFinish={() => createOrder(order)}>
       <ul className={styles.orderFormContainer}>
-        <li className={styles.orderFormItem}>
-          <label className={styles.orderFormItemLabel}>Email</label>
-          <input
-            name="email"
-            type="email"
-            required
-            className={styles.orderFormItemInput}
-            onChange={(e) => handleInput(e)}
-          />
-        </li>
-        <li>
-          <label className={styles.orderFormItemLabel}>Name</label>
-          <input
-            name="name"
-            type="text"
-            required
-            className={styles.orderFormItemInput}
-            onChange={(e) => handleInput(e)}
-          />
-        </li>
-        <li>
-          <label className={styles.orderFormItemLabel}>Address</label>
-          <input
-            name="address"
-            type="text"
-            required
-            className={styles.orderFormItemInput}
-            onChange={(e) => handleInput(e)}
-          />
-        </li>
-        <li className={styles.orderFormItemLabel}>
-          <button className="button primary" type="submit">
-            Checkout
-          </button>
-        </li>
+        <Form.Item
+          label="email"
+          name="email"
+          rules={[rules.required("Input your email")]}
+        >
+          <Input name="email" onChange={(e) => handleInput(e)} />
+        </Form.Item>
+        <Form.Item
+          label="name"
+          name="name"
+          rules={[rules.required("Input your name")]}
+        >
+          <Input name="name" onChange={(e) => handleInput(e)} />
+        </Form.Item>
+        <Form.Item
+          label="address"
+          name="address"
+          rules={[rules.required("Input your address")]}
+        >
+          <Input name="address" onChange={(e) => handleInput(e)} />
+        </Form.Item>
+        <Button
+          type="primary"
+          htmlType="submit"
+          style={{ background: "#389e0d", borderColor: "#389e0d" }}
+        >
+          Checkout
+        </Button>
       </ul>
-    </form>
+    </Form>
   );
 };
 

@@ -7,7 +7,7 @@ type Props = {
   setFilterSize: (filter: IFilter) => void;
 };
 
-const Filter: FC<Props> = ({ setFilterSize, size }: Props) => {
+const Filter: FC<Props> = ({ setFilterSize, size }) => {
   return (
     <div className={styles.filterStyle}>
       <div>

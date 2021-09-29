@@ -1,7 +1,7 @@
 import React, { useState, useEffect, FC } from "react";
 import { formatCurrency } from "utils/currency";
-import Modal from "react-modal";
 import styles from "css/pages/Products.module.css";
+import { Button } from "antd";
 
 import { Filter } from "components/Filter";
 import { Sort } from "components/Sort";
@@ -29,11 +29,6 @@ const Products: FC = () => {
   const { list } = useTypedSelector((state) => state.products);
   const { size } = useTypedSelector((state) => state.filter);
   const { type } = useTypedSelector((state) => state.sort);
-
-  const [product, setProduct] = useState<IProduct | null>();
-
-  const openModal = (product: IProduct) => setProduct(product);
-  const closeModal = () => setProduct(null);
 
   const setSortProducts = (sortType: ISort) => {
     setSortType(sortType);
@@ -65,48 +60,10 @@ const Products: FC = () => {
             <Product
               key={product._id}
               product={product}
-              openModal={openModal}
               addProductToCart={addProductToCart}
             />
           ))}
         </ul>
-      )}
-      {product && (
-        <Modal isOpen={true} onRequestClose={closeModal}>
-          <button className="close-modal" onClick={closeModal}>
-            x
-          </button>
-          <div className={styles.productDetails}>
-            <img src={product.image} alt={product.title}></img>
-            <div className={styles.productDetailsDescription}>
-              <p>
-                <strong>{product.title}</strong>
-              </p>
-              <p>{product.description}</p>
-              <p>
-                Available Sizes:{" "}
-                {product.availableSizes.map((x) => (
-                  <span key={x}>
-                    {" "}
-                    <button className="button">{x}</button>
-                  </span>
-                ))}
-              </p>
-              <div className={styles.productPrice}>
-                <div>{formatCurrency(product.price)}</div>
-                <button
-                  className="button primary"
-                  onClick={() => {
-                    addProductToCart(product);
-                    closeModal();
-                  }}
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-          </div>
-        </Modal>
       )}
     </>
   );

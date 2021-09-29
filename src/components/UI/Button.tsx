@@ -8,7 +8,7 @@ type Props = {
   onClick: () => void;
 };
 
-const Button: FC<Props> = ({ onClick, text, type }: Props) => {
+const Button: FC<Props> = ({ onClick, text, type }) => {
   return (
     <button type={type} className={styles.button} onClick={() => onClick}>
       {text}
