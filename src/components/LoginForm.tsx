@@ -43,4 +43,4 @@ const LoginForm: FC = () => {
   );
 };
 
-export default LoginForm;
+export { LoginForm };

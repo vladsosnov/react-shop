@@ -1,6 +1,8 @@
 import React, { FC } from "react";
-import styles from "css/components/Sort.module.css";
+import { Select } from "antd";
 import { ISort } from "models/Sort";
+
+const { Option } = Select;
 
 type Props = {
   sort: ISort;
@@ -9,17 +11,11 @@ type Props = {
 
 const Sort: FC<Props> = ({ setSortType, sort }) => {
   return (
-    <div className={styles.sortStyle}>
-      Order&nbsp;
-      <select
-        value={sort}
-        onChange={(e) => setSortType(e.target.value as ISort)}
-      >
-        <option>Latest</option>
-        <option value="lowest">Lowest</option>
-        <option value="highest">Highest</option>
-      </select>
-    </div>
+    <Select value={sort} onChange={setSortType}>
+      <Option value="latest">Latest</Option>
+      <Option value="lowest">Lowest</Option>
+      <Option value="highest">Highest</Option>
+    </Select>
   );
 };
 

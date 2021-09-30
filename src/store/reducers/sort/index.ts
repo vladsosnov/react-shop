@@ -2,13 +2,10 @@ import { ISort } from "models/Sort";
 import { SortAction, SortActionEnum, SortState } from "./types";
 
 const initialState: SortState = {
-  type: "default" as ISort,
+  type: "latest" as ISort,
 };
 
-export default function sortReducer(
-  state = initialState,
-  action: SortAction
-): SortState {
+const sortReducer = (state = initialState, action: SortAction): SortState => {
   switch (action.type) {
     case SortActionEnum.SET_SORT_TYPE:
       return {
@@ -19,4 +16,6 @@ export default function sortReducer(
     default:
       return state;
   }
-}
+};
+
+export { sortReducer };

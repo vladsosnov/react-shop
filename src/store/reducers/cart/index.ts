@@ -7,10 +7,7 @@ const initialState: CartState = {
   cartItems: [] as IProduct[],
 };
 
-export default function cartReducer(
-  state = initialState,
-  action: CartAction
-): CartState {
+const cartReducer = (state = initialState, action: CartAction): CartState => {
   switch (action.type) {
     case CartActionEnum.FETCH_CART_ITEMS:
       return {
@@ -60,4 +57,6 @@ export default function cartReducer(
     default:
       return state;
   }
-}
+};
+
+export { cartReducer };

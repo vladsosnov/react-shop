@@ -33,4 +33,4 @@ const AppRouter: FC = () => {
   );
 };
 
-export default AppRouter;
+export { AppRouter };

@@ -5,10 +5,10 @@ const initialState: ProductsState = {
   list: [] as IProduct[],
 };
 
-export default function productsReducer(
+const productsReducer = (
   state = initialState,
   action: ProductsAction
-): ProductsState {
+): ProductsState => {
   switch (action.type) {
     case ProductsActionEnum.FETCH_PRODUCTS_LIST:
       return { ...state, list: action.payload };
@@ -16,4 +16,6 @@ export default function productsReducer(
     default:
       return state;
   }
-}
+};
+
+export { productsReducer };

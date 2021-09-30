@@ -5,10 +5,10 @@ const initialState: FilterState = {
   size: IFilter.All,
 };
 
-export default function filterReducer(
+const filterReducer = (
   state = initialState,
   action: FilterAction
-): FilterState {
+): FilterState => {
   switch (action.type) {
     case FilterActionEnum.SET_FILTER_SIZE:
       if (!action.payload) {
@@ -25,4 +25,6 @@ export default function filterReducer(
     default:
       return state;
   }
-}
+};
+
+export { filterReducer };

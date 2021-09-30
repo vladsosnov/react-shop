@@ -8,10 +8,7 @@ const initialState: AuthState = {
   user: {} as IUser,
 };
 
-export default function authReducer(
-  state = initialState,
-  action: AuthAction
-): AuthState {
+const authReducer = (state = initialState, action: AuthAction): AuthState => {
   switch (action.type) {
     case AuthActionEnum.SET_AUTH:
       return { ...state, isAuth: action.payload, isLoading: false };
@@ -25,4 +22,6 @@ export default function authReducer(
     default:
       return state;
   }
-}
+};
+
+export { authReducer };

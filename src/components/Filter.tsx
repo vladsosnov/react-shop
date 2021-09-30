@@ -1,6 +1,8 @@
 import React, { FC } from "react";
-import styles from "css/components/Filter.module.css";
+import { Select } from "antd";
 import { IFilter } from "models/Filter";
+
+const { Option } = Select;
 
 type Props = {
   size: IFilter;
@@ -9,23 +11,15 @@ type Props = {
 
 const Filter: FC<Props> = ({ setFilterSize, size }) => {
   return (
-    <div className={styles.filterStyle}>
-      <div>
-        Filter&nbsp;
-        <select
-          value={size}
-          onChange={(e) => setFilterSize(e.target.value as IFilter)}
-        >
-          <option value="">ALL</option>
-          <option value="XS">XS</option>
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
-          <option value="XXL">XXL</option>
-        </select>
-      </div>
-    </div>
+    <Select value={size} onChange={setFilterSize}>
+      <Option value="">ALL</Option>
+      <Option value="XS">XS</Option>
+      <Option value="S">S</Option>
+      <Option value="M">M</Option>
+      <Option value="L">L</Option>
+      <Option value="XL">XL</Option>
+      <Option value="XXL">XXL</Option>
+    </Select>
   );
 };
 

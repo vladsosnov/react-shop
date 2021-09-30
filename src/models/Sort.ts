@@ -1,5 +1,5 @@
 export const enum ISort {
-  Default = "default",
+  Latest = "latest",
   Lowest = "lowest",
   Highest = "highest",
 }

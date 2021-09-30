@@ -1,8 +1,8 @@
-import auth from "./auth";
-import cart from "./cart";
-import products from "./products";
-import filter from "./filter";
-import sort from "./sort";
+import { authReducer as auth } from "./auth";
+import { cartReducer as cart } from "./cart";
+import { productsReducer as products } from "./products";
+import { filterReducer as filter } from "./filter";
+import { sortReducer as sort } from "./sort";
 
 export const reducers = {
   auth,
