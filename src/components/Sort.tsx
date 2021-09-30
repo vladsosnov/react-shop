@@ -9,12 +9,25 @@ type Props = {
   setSortType: (sort: ISort) => void;
 };
 
+type SortOption = {
+  value: string;
+  label: string;
+};
+
 const Sort: FC<Props> = ({ setSortType, sort }) => {
+  const options: SortOption[] = [
+    { value: "latest", label: "Latest" },
+    { value: "lowest", label: "Lowest" },
+    { value: "highest", label: "Highest" },
+  ];
+
   return (
     <Select value={sort} onChange={setSortType}>
-      <Option value="latest">Latest</Option>
-      <Option value="lowest">Lowest</Option>
-      <Option value="highest">Highest</Option>
+      {options.map((option: SortOption) => (
+        <Option key={option.label} value={option.value}>
+          {option.label}
+        </Option>
+      ))}
     </Select>
   );
 };

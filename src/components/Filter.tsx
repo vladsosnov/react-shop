@@ -9,16 +9,29 @@ type Props = {
   setFilterSize: (filter: IFilter) => void;
 };
 
+type FilterOption = {
+  value: string;
+  label: string;
+};
+
 const Filter: FC<Props> = ({ setFilterSize, size }) => {
+  const options: FilterOption[] = [
+    { value: "", label: "ALL" },
+    { value: "XS", label: "XS" },
+    { value: "S", label: "S" },
+    { value: "M", label: "M" },
+    { value: "L", label: "L" },
+    { value: "XL", label: "XL" },
+    { value: "XLL", label: "XLL" },
+  ];
+
   return (
     <Select value={size} onChange={setFilterSize}>
-      <Option value="">ALL</Option>
-      <Option value="XS">XS</Option>
-      <Option value="S">S</Option>
-      <Option value="M">M</Option>
-      <Option value="L">L</Option>
-      <Option value="XL">XL</Option>
-      <Option value="XXL">XXL</Option>
+      {options.map((option: FilterOption) => (
+        <Option key={option.label} value={option.value}>
+          {option.label}
+        </Option>
+      ))}
     </Select>
   );
 };

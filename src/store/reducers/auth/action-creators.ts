@@ -46,7 +46,7 @@ export const AuthActionCreators = {
             dispatch(AuthActionCreators.setError("Error in user name or pass"));
           }
           dispatch(AuthActionCreators.setIsLoading(false));
-        }, 2000);
+        }, 1000);
       } catch (e) {
         dispatch(AuthActionCreators.setError("Something error"));
       }

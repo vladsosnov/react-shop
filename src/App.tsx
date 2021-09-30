@@ -1,6 +1,5 @@
 import React, { FC, useEffect } from "react";
 import { AppRouter } from "components/AppRouter";
-import { Navbar } from "components/Navbar";
 import "App.css";
 import { useActions } from "hooks/useActions";
 import { IUser } from "models/User";
@@ -18,7 +17,6 @@ const App: FC = () => {
 
   return (
     <MainLayout>
-      <Navbar />
       <AppRouter />
     </MainLayout>
   );

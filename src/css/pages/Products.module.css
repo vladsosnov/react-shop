@@ -7,12 +7,6 @@
   list-style: none;
 }
 
-.productDetails {}
-
-.filterResult {
-  background: red;
-}
-
 .productsEmptyState {
   font-size: 21px;
   font-weight: 600;

@@ -1,7 +1,5 @@
-import React, { useState, useEffect, FC } from "react";
-import { formatCurrency } from "utils/currency";
+import React, { useEffect, FC } from "react";
 import styles from "css/pages/Products.module.css";
-import { Button } from "antd";
 
 import { Filter } from "components/Filter";
 import { Sort } from "components/Sort";
@@ -46,7 +44,6 @@ const Products: FC = () => {
 
   return (
     <>
-      <div className={styles.filterResult}>{list.length}</div>
       <div className={styles.productsNavbar}>
         <Sort sort={type} setSortType={setSortProducts} />
         <Filter size={size} setFilterSize={setFilterProducts} />
