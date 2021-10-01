@@ -5,10 +5,9 @@ import { Button } from "antd";
 
 import { Product } from "components/pages/cart/Product";
 import { OrderForm } from "components/pages/cart/OrderForm";
-import { IProduct } from "models/Product";
 import { useActions } from "hooks/useActions";
 import { useTypedSelector } from "hooks/useTypedSelector";
-import { IOrder } from "models/Cart";
+import { IOrder, IProduct } from "models";
 
 const Cart: FC = () => {
   const { fetchCartItems, removeFromCart, createOrder } = useActions();

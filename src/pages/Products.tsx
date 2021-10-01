@@ -1,14 +1,11 @@
 import React, { useEffect, FC } from "react";
 import styles from "css/pages/Products.module.css";
 
-import { Filter } from "components/Filter";
-import { Sort } from "components/Sort";
+import { Filter, Sort } from "components";
 import { useActions } from "hooks/useActions";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import { Product } from "components/pages/products/Product";
-import { IProduct } from "models/Product";
-import { ISort } from "models/Sort";
-import { IFilter } from "models/Filter";
+import { IProduct, ISort, IFilter } from "models";
 
 const Products: FC = () => {
   const {
