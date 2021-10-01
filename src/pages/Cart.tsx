@@ -7,7 +7,8 @@ import { Product } from "components/pages/cart/Product";
 import { OrderForm } from "components/pages/cart/OrderForm";
 import { useActions } from "hooks/useActions";
 import { useTypedSelector } from "hooks/useTypedSelector";
-import { IOrder, IProduct } from "models";
+import { IOrder } from "models/Cart";
+import { IProduct } from "models/Product";
 
 const Cart: FC = () => {
   const { fetchCartItems, removeFromCart, createOrder } = useActions();
@@ -18,12 +19,12 @@ const Cart: FC = () => {
 
   const { cartItems } = useTypedSelector((state) => state.cart);
 
-  const [order, setOrder] = useState({});
+  // TODO add partial
+  const [order, setOrder] = useState({} as IOrder);
   const [showCheckout, setShowCheckout] = useState(false);
 
-  const handleInput = (e: React.SyntheticEvent) => {
-    const target = e.target as HTMLInputElement;
-    setOrder({ ...order, [target.name]: target.value });
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setOrder({ ...order, [e.target.name]: e.target.value });
   };
 
   return (
@@ -71,7 +72,7 @@ const Cart: FC = () => {
               <OrderForm
                 createOrder={createOrder}
                 handleInput={handleInput}
-                order={order as IOrder}
+                order={order}
               />
             </div>
           )}
