@@ -22,7 +22,7 @@ const Products: FC = () => {
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [fetchProducts]);
 
   const { list } = useTypedSelector((state) => state.products);
   const { size } = useTypedSelector((state) => state.filter);

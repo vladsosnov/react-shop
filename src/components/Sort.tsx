@@ -23,7 +23,7 @@ const Sort: FC<Props> = ({ setSortType, sort }) => {
 
   return (
     <Select value={sort} onChange={setSortType}>
-      {options.map((option: SortOption) => (
+      {options.map((option) => (
         <Option key={option.label} value={option.value}>
           {option.label}
         </Option>

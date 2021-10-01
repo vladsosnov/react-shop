@@ -16,7 +16,7 @@ const AppRouter: FC = () => {
           component={route.component}
         />
       ))}
-      {/* <Redirect to={RouteNames.HOME} /> */}
+      <Redirect to={RouteNames.HOME} />
     </Switch>
   ) : (
     <Switch>
@@ -28,7 +28,7 @@ const AppRouter: FC = () => {
           component={route.component}
         />
       ))}
-      {/* <Redirect to={RouteNames.LOGIN} /> */}
+      <Redirect to={RouteNames.LOGIN} />
     </Switch>
   );
 };

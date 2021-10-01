@@ -1,21 +1,30 @@
 .cart {
   max-width: 1240px;
   margin: 0 auto;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
   list-style: none;
 }
 
-.cartHeader {
-  margin-bottom: 8px;
-  font-size: 24px;
+.cartWrapper {
+  padding: 16px;
 }
 
-.formContainer {}
+.cartHeader {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.cartOrderButton {
+  padding: 8px 16px;
+}
 
 .cartItems {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }

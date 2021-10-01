@@ -27,7 +27,7 @@ const Filter: FC<Props> = ({ setFilterSize, size }) => {
 
   return (
     <Select value={size} onChange={setFilterSize}>
-      {options.map((option: FilterOption) => (
+      {options.map((option) => (
         <Option key={option.label} value={option.value}>
           {option.label}
         </Option>

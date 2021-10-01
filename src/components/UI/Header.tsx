@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import styles from "css/UI/Header.module.css";
-import { Menu, Dropdown, Button } from "antd";
+import { Menu, Dropdown } from "antd";
 import { useHistory } from "react-router";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import { RouteNames } from "routes";
@@ -14,14 +14,18 @@ const Header: FC = () => {
 
   const dropdownMenu = (
     <Menu>
-      <Menu.Item>Profile</Menu.Item>
-      <Menu.Item onClick={logout}>Logout</Menu.Item>
+      <Menu.Item key="profile">
+        <Link to="/profile">Profile</Link>
+      </Menu.Item>
+      <Menu.Item key="logout" onClick={logout}>
+        Logout
+      </Menu.Item>
     </Menu>
   );
 
   return (
     <header className={styles.header}>
-      <nav className={styles.header__nav}>
+      <nav className={styles.headerNav}>
         <Link to="/" className={styles.link}>
           Home
         </Link>
@@ -31,20 +35,18 @@ const Header: FC = () => {
         <Link to="/cart" className={styles.link}>
           Cart
         </Link>
-        <div className={styles.link}>
-          {isAuth ? (
-            <Dropdown overlay={dropdownMenu} arrow>
-              <Button>{user.username}</Button>
-            </Dropdown>
-          ) : (
-            <div
-              className={styles.header__logStatus}
-              onClick={() => router.push(RouteNames.LOGIN)}
-            >
-              Login
-            </div>
-          )}
-        </div>
+        {isAuth ? (
+          <Dropdown className={styles.link} overlay={dropdownMenu}>
+            <div>{user.username}</div>
+          </Dropdown>
+        ) : (
+          <div
+            className={styles.link}
+            onClick={() => router.push(RouteNames.LOGIN)}
+          >
+            Login
+          </div>
+        )}
       </nav>
     </header>
   );

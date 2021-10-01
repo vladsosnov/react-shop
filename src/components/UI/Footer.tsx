@@ -9,7 +9,7 @@ const Footer: FC = () => {
         href="https://github.com/vladsosnov"
         target="_blank"
         rel="noopener noreferrer"
-        className={styles["footer__git-link"]}
+        className={styles.footerGitLink}
       >
         Vlad
       </a>

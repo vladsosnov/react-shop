@@ -7,11 +7,11 @@ import styles from "css/layouts/MainLayout.module.css";
 
 const MainLayout: FC = (props) => {
   return (
-    <>
+    <div className={styles.rootContainer}>
       <Header />
       <main className={styles.mainLayout}>{props.children}</main>
       <Footer />
-    </>
+    </div>
   );
 };
 

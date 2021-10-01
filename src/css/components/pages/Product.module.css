@@ -1,10 +1,10 @@
 .product {
-  padding: 1rem;
+  padding: 16px;
   display: flex;
 }
 
 .productImage {
-  width: 5rem;
+  width: 8rem;
 }
 
 .productWrapper {
@@ -12,15 +12,4 @@
   flex-direction: column;
   justify-content: space-between;
   margin-left: 8px;
-}
-
-.productTitle {
-}
-
-.productFooter {
-
-}
-
-.productPrice {
-
 }

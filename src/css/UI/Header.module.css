@@ -1,17 +1,17 @@
 .header {
-  margin-bottom: 14px;
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.header__nav {
+.headerNav {
   max-width: 800px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
-.header__nav .link {
+.headerNav .link {
   flex-grow: 1;
   text-align: center;
   padding: 1em;
@@ -19,9 +19,11 @@
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  border: none;
+  box-shadow: none;
 }
 
-.header__nav .link::after {
+.headerNav .link::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -33,22 +35,6 @@
   transition: 0.7s transform cubic-bezier(0.06, 0.9, 0.28, 1);
 }
 
-.header__nav .link:hover::after {
+.headerNav .link:hover::after {
   transform: scaleX(1);
-}
-
-.header__user {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header__userName {
-  font-size: 14px;
-  margin-bottom: 0;
-  margin-right: 4px;
-}
-
-.header__logStatus {
-  font-size: 14px;
 }

@@ -30,9 +30,9 @@ const Cart: FC = () => {
   return (
     <>
       {cartItems.length === 0 ? (
-        <div className={styles.cart && styles.cartHeader}>Cart is empty</div>
+        <div className={styles.cartHeader}>Cart is empty</div>
       ) : (
-        <div className={styles.cart && styles.cartHeader}>
+        <div className={styles.cartHeader}>
           You have {cartItems.length} products in the cart{" "}
         </div>
       )}
@@ -50,9 +50,9 @@ const Cart: FC = () => {
       </div>
 
       {cartItems.length !== 0 && (
-        <div>
+        <>
           <div className={styles.cart}>
-            <div className={styles.total}>
+            <div className={styles.cartOrderButton}>
               <div>
                 Total:{" "}
                 {formatCurrency(
@@ -76,7 +76,7 @@ const Cart: FC = () => {
               />
             </div>
           )}
-        </div>
+        </>
       )}
     </>
   );

@@ -8,14 +8,11 @@ type Props = {
 const Hero: FC<Props> = ({ moveToSliderHandler }) => {
   return (
     <div className={styles.hero}>
-      <div className={styles["inner-hero"]}>
-        <div className={styles["hero-title"]}>
-          <h1 className={styles["hero-heading"]}>React shop app</h1>
+      <div className={styles.innerHero}>
+        <div className={styles.heroTitle}>
+          <h1 className={styles.heroHeading}>React shop app</h1>
           {/* TODO add smooth scroll */}
-          <button
-            className={styles["hero-button"]}
-            onClick={moveToSliderHandler}
-          >
+          <button className={styles.heroButton} onClick={moveToSliderHandler}>
             To discounts
           </button>
         </div>
