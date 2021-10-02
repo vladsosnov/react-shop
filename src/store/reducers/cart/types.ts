@@ -2,7 +2,7 @@ import { IOrder } from "./../../../models/Cart";
 import { IProduct } from "models/Product";
 
 export interface CartState {
-  order: IOrder;
+  order: IOrder | null;
   cartItems: IProduct[];
 }
 
@@ -20,7 +20,7 @@ export interface FetchCartItemsAction {
 
 export interface CreateOrderAction {
   type: CartActionEnum.CREATE_ORDER;
-  payload: IOrder;
+  payload: IOrder | null;
 }
 
 export interface AddToCartAction {

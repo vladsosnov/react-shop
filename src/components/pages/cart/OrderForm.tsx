@@ -4,10 +4,9 @@ import styles from "css/components/pages/OrderForm.module.css";
 import { Button, Form, Input } from "antd";
 import { rules } from "utils/rules";
 import { IOrder } from "models/Cart";
-
 type Props = {
-  order: IOrder;
-  createOrder: (order: IOrder) => void;
+  order: IOrder | null;
+  createOrder: (order: IOrder | null) => void;
   handleInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 

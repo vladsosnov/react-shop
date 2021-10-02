@@ -37,7 +37,7 @@ const Header: FC = () => {
         </Link>
         {isAuth ? (
           <Dropdown className={styles.link} overlay={dropdownMenu}>
-            <div>{user.username}</div>
+            <div>{user?.username}</div>
           </Dropdown>
         ) : (
           <div

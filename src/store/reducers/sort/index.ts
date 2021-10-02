@@ -1,8 +1,7 @@
-import { ISort } from "models/Sort";
 import { SortAction, SortActionEnum, SortState } from "./types";
 
 const initialState: SortState = {
-  type: "latest" as ISort,
+  type: "latest",
 };
 
 const sortReducer = (state = initialState, action: SortAction): SortState => {

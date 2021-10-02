@@ -6,6 +6,6 @@ export interface IOrder {
   address: string;
 }
 export interface ICart {
-  order: IOrder;
+  order: IOrder | null;
   cartItems: IProduct[];
 }

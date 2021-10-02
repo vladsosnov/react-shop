@@ -1,8 +1,7 @@
-import { IProduct } from "models/Product";
 import { ProductsAction, ProductsActionEnum, ProductsState } from "./types";
 
 const initialState: ProductsState = {
-  list: [] as IProduct[],
+  list: [],
 };
 
 const productsReducer = (

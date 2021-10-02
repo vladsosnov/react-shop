@@ -7,19 +7,18 @@ import { Product } from "components/pages/cart/Product";
 import { OrderForm } from "components/pages/cart/OrderForm";
 import { useActions } from "hooks/useActions";
 import { useTypedSelector } from "hooks/useTypedSelector";
-import { IOrder } from "models/Cart";
 import { IProduct } from "models/Product";
+import { IOrder } from "models/Cart";
 
 const Cart: FC = () => {
   const { fetchCartItems, removeFromCart, createOrder } = useActions();
 
   useEffect(() => {
     fetchCartItems(JSON.parse(localStorage.getItem("cartItems") || "") || []);
-  }, []);
+  }, [fetchCartItems]);
 
   const { cartItems } = useTypedSelector((state) => state.cart);
 
-  // TODO add partial
   const [order, setOrder] = useState({} as IOrder);
   const [showCheckout, setShowCheckout] = useState(false);
 

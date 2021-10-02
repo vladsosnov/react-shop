@@ -1,7 +1,7 @@
 import { IUser } from "models/User";
 export interface AuthState {
   isAuth: boolean;
-  user: IUser;
+  user: IUser | null;
   isLoading: boolean;
   error: string;
 }
@@ -20,7 +20,7 @@ export interface SetAuthAction {
 
 export interface SetUserAction {
   type: AuthActionEnum.SET_USER;
-  payload: IUser;
+  payload: IUser | null;
 }
 
 export interface SetIsLoadingAction {

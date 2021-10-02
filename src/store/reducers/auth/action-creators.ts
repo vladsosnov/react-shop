@@ -10,7 +10,7 @@ import {
 import axios from "axios";
 
 export const AuthActionCreators = {
-  setUser: (user: IUser): SetUserAction => ({
+  setUser: (user: IUser | null): SetUserAction => ({
     type: AuthActionEnum.SET_USER,
     payload: user,
   }),
@@ -55,7 +55,7 @@ export const AuthActionCreators = {
     localStorage.removeItem("auth");
     localStorage.removeItem("username");
 
-    dispatch(AuthActionCreators.setUser({} as IUser));
+    dispatch(AuthActionCreators.setUser(null));
     dispatch(AuthActionCreators.setIsAuth(false));
   },
 };

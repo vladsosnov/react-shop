@@ -5,7 +5,8 @@ import { Filter, Sort } from "components";
 import { useActions } from "hooks/useActions";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import { Product } from "components/pages/products/Product";
-import { ISort, IFilter } from "models";
+import { IFilter } from "models";
+import { ISort } from "models/Sort";
 import { IProduct } from "models/Product";
 
 const Products: FC = () => {

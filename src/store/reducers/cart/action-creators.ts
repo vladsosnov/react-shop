@@ -21,7 +21,7 @@ export const CartActionCreators = {
     type: CartActionEnum.REMOVE_FROM_CART,
     payload: product,
   }),
-  createOrder: (order: IOrder): CreateOrderAction => ({
+  createOrder: (order: IOrder | null): CreateOrderAction => ({
     type: CartActionEnum.CREATE_ORDER,
     payload: order,
   }),

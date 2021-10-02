@@ -15,7 +15,7 @@ const Navbar: FC = () => {
       <Row justify="end">
         {isAuth ? (
           <>
-            (<div style={{ color: "#fff" }}>{user.username}</div>
+            (<div style={{ color: "#fff" }}>{user?.username}</div>
             <Menu theme="dark" mode="horizontal" selectable={false}>
               <Menu.Item key={1} onClick={() => logout()}>
                 Logout

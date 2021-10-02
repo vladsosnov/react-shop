@@ -1,10 +1,9 @@
-import { IOrder } from "./../../../models/Cart";
 import { IProduct } from "models/Product";
 import { CartAction, CartActionEnum, CartState } from "./types";
 
 const initialState: CartState = {
-  order: {} as IOrder,
-  cartItems: [] as IProduct[],
+  order: null,
+  cartItems: [],
 };
 
 const cartReducer = (state = initialState, action: CartAction): CartState => {
